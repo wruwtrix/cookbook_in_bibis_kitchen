@@ -198,6 +198,25 @@
       border-radius: 4px;
     }
     
+    .sheet-mobile {
+      display: block;
+      margin: 20px 0;
+    }
+
+    .sheet-desktop {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .sheet-mobile {
+        display: none;
+      }
+      
+      .sheet-desktop {
+        display: block;
+      }
+    }
+    
     .filters {
       background: #fff;
       border-radius: 12px;
@@ -358,10 +377,6 @@
     }
 
     @media (max-width: 480px) {
-      .sheet-container iframe {
-        height: 400px;
-      }
-      
       h1 {
         font-size: 1.5rem;
       }
@@ -383,24 +398,6 @@
         padding: 16px 12px;
       }
     }
-    .sheet-mobile {
-  display: block;
-  margin: 20px 0;
-}
-
-.sheet-desktop {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .sheet-mobile {
-    display: none;
-  }
-  
-  .sheet-desktop {
-    display: block;
-  }
-}
   </style>
 </head>
 <body>
@@ -424,7 +421,7 @@
     
     <p><strong>Choose one dish</strong> (or two if you're excited!). <strong>Please pick your dish by February 12.</strong></p>
     
-    <img src="https://drive.google.com/thumbnail?id=1l_RO5vEmwRy-nty_Uks41p-6KeDLalDF&sz=w1600" alt="Vicki's house" class="house-photo">
+    <img src="house.jpg" alt="Vicki's house" class="house-photo">
     
     <p style="margin-top: 20px;">
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdn61fGaQm3KBvttN6IY-otYrr5W7igkgax85wZYa4ZdxnI5Q/viewform?usp=header" target="_blank" rel="noopener" class="btn">Claim Your Dish</a>
@@ -467,22 +464,22 @@
   </section>
 
   <!-- WHAT'S ALREADY CLAIMED -->
-<section>
-  <h2>What's Already Claimed</h2>
-  <p>This list updates automatically as people submit the form. Please check it before claiming.</p>
-  
-  <!-- Mobile: show button -->
-  <div class="sheet-mobile">
-    <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLkKO1Cxuqudj1qMrtgp0A0UKfkP06UzTblCc6zx3ejb4C0azMJIOToHWnIG-wU79I0Xddam_2J_yh/pubhtml?gid=1096872766&single=true" target="_blank" rel="noopener" class="btn">View Claimed Dishes</a>
-  </div>
-  
-  <!-- Desktop: show embedded sheet -->
-  <div class="sheet-desktop">
-    <div class="sheet-container">
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLkKO1Cxuqudj1qMrtgp0A0UKfkP06UzTblCc6zx3ejb4C0azMJIOToHWnIG-wU79I0Xddam_2J_yh/pubhtml?gid=1096872766&single=true" title="Claimed dishes list"></iframe>
+  <section>
+    <h2>What's Already Claimed</h2>
+    <p>This list updates automatically as people submit the form. Please check it before claiming.</p>
+    
+    <!-- Mobile: show button -->
+    <div class="sheet-mobile">
+      <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLkKO1Cxuqudj1qMrtgp0A0UKfkP06UzTblCc6zx3ejb4C0azMJIOToHWnIG-wU79I0Xddam_2J_yh/pubhtml?gid=1096872766&single=true" target="_blank" rel="noopener" class="btn">View Claimed Dishes</a>
     </div>
-  </div>
-</section>
+    
+    <!-- Desktop: show embedded sheet -->
+    <div class="sheet-desktop">
+      <div class="sheet-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLkKO1Cxuqudj1qMrtgp0A0UKfkP06UzTblCc6zx3ejb4C0azMJIOToHWnIG-wU79I0Xddam_2J_yh/pubhtml?gid=1096872766&single=true" title="Claimed dishes list"></iframe>
+      </div>
+    </div>
+  </section>
 
   <!-- BROWSE RECIPES -->
   <section>
@@ -512,7 +509,7 @@
     <div class="country-section" data-country="Eritrea">
       <div class="country-header">
         <h3 class="country-title">Eritrea</h3>
-        <a href="https://drive.google.com/file/d/1clCkWFXB1dBm0TlcnDnzLVd5c0YoRPZv/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Eritrea recipes (PDF)</a>
+        <a href="pdfs/eritrea.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Eritrea recipes (PDF)</a>
       </div>
       <div class="recipe-grid">
         <div class="recipe-card" data-name="doro wat" data-desc="stewed chicken legs with berbere and eggs" data-country="eritrea" data-page="p.53">
@@ -520,7 +517,7 @@
           <div class="recipe-desc">Stewed chicken legs with berbere and eggs</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.53</span>
-            <a href="https://drive.google.com/file/d/1clCkWFXB1dBm0TlcnDnzLVd5c0YoRPZv/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/eritrea.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="ma gehennet's zebhi hamli" data-desc="stewed spinach" data-country="eritrea" data-page="p.44">
@@ -528,7 +525,7 @@
           <div class="recipe-desc">Stewed spinach</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.44</span>
-            <a href="https://drive.google.com/file/d/1clCkWFXB1dBm0TlcnDnzLVd5c0YoRPZv/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/eritrea.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
       </div>
@@ -538,7 +535,7 @@
     <div class="country-section" data-country="Somalia">
       <div class="country-header">
         <h3 class="country-title">Somalia</h3>
-        <a href="https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Somalia recipes (PDF)</a>
+        <a href="pdfs/somalia.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Somalia recipes (PDF)</a>
       </div>
       <div class="recipe-grid">
         <div class="recipe-card" data-name="digaag qumbe" data-desc="chicken stew with yogurt and coconut" data-country="somalia" data-page="p.73">
@@ -546,7 +543,7 @@
           <div class="recipe-desc">Chicken stew with yogurt and coconut</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.73</span>
-            <a href="https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/somalia.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="ma sahra's spiced chicken and onion samosas" data-desc="spiced chicken and onion samosas" data-country="somalia" data-page="p.88">
@@ -554,7 +551,7 @@
           <div class="recipe-desc">Spiced chicken and onion samosas</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.88</span>
-            <a href="https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/somalia.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="ma halima's sabaayad" data-desc="somali flatbreads" data-country="somalia" data-page="p.76">
@@ -562,7 +559,7 @@
           <div class="recipe-desc">Somali flatbreads</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.76</span>
-            <a href="https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/somalia.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="shaah cadays" data-desc="somali spiced tea with milk" data-country="somalia" data-page="p.94">
@@ -570,7 +567,7 @@
           <div class="recipe-desc">Somali spiced tea with milk</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.94</span>
-            <a href="https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/somalia.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
       </div>
@@ -580,7 +577,7 @@
     <div class="country-section" data-country="Kenya">
       <div class="country-header">
         <h3 class="country-title">Kenya</h3>
-        <a href="https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Kenya recipes (PDF)</a>
+        <a href="pdfs/kenya.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Kenya recipes (PDF)</a>
       </div>
       <div class="recipe-grid">
         <div class="recipe-card" data-name="ma kauthar's chicken biryani" data-desc="chicken biryani" data-country="kenya" data-page="p.122">
@@ -588,7 +585,7 @@
           <div class="recipe-desc">Chicken biryani</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.122</span>
-            <a href="https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/kenya.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="kachumbari" data-desc="tomato and onion salad" data-country="kenya" data-page="p.114">
@@ -596,7 +593,7 @@
           <div class="recipe-desc">Tomato and onion salad</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.114</span>
-            <a href="https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/kenya.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="sukuma wiki" data-desc="greens with tomatoes" data-country="kenya" data-page="p.121">
@@ -604,7 +601,7 @@
           <div class="recipe-desc">Greens with tomatoes</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.121</span>
-            <a href="https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/kenya.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="ma penny's mukimo" data-desc="mashed green split peas, corn, and potatoes" data-country="kenya" data-page="p.118">
@@ -612,7 +609,7 @@
           <div class="recipe-desc">Mashed green split peas, corn, and potatoes</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.118</span>
-            <a href="https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/kenya.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
       </div>
@@ -622,7 +619,7 @@
     <div class="country-section" data-country="Comoros">
       <div class="country-header">
         <h3 class="country-title">Comoros</h3>
-        <a href="https://drive.google.com/file/d/1Io6092wt9NUDAn3Bct4MuUTmAxAIz6v0/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Comoros recipes (PDF)</a>
+        <a href="pdfs/comoros.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Comoros recipes (PDF)</a>
       </div>
       <div class="recipe-grid">
         <div class="recipe-card" data-name="sweet pea soup with coconut and ginger" data-desc="sweet pea soup with coconut and ginger" data-country="comoros" data-page="p.260">
@@ -630,7 +627,7 @@
           <div class="recipe-desc">Sweet pea soup with coconut and ginger</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.260</span>
-            <a href="https://drive.google.com/file/d/1Io6092wt9NUDAn3Bct4MuUTmAxAIz6v0/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/comoros.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="ambrevades au curry" data-desc="curried pigeon peas" data-country="comoros" data-page="p.263">
@@ -638,7 +635,7 @@
           <div class="recipe-desc">Curried pigeon peas</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.263</span>
-            <a href="https://drive.google.com/file/d/1Io6092wt9NUDAn3Bct4MuUTmAxAIz6v0/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/comoros.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
       </div>
@@ -648,7 +645,7 @@
     <div class="country-section" data-country="Mozambique">
       <div class="country-header">
         <h3 class="country-title">Mozambique</h3>
-        <a href="https://drive.google.com/file/d/1g33V70CTMkEU-6O5rPG95Wvbgo6PuNck/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Mozambique recipes (PDF)</a>
+        <a href="pdfs/mozambique.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Mozambique recipes (PDF)</a>
       </div>
       <div class="recipe-grid">
         <div class="recipe-card" data-name="ma josefina's plantains with coconut and prawns" data-desc="plantains with coconut and prawns" data-country="mozambique" data-page="p.188">
@@ -656,7 +653,7 @@
           <div class="recipe-desc">Plantains with coconut and prawns</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.188</span>
-            <a href="https://drive.google.com/file/d/1g33V70CTMkEU-6O5rPG95Wvbgo6PuNck/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/mozambique.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="ma maria's corn de pão com coco" data-desc="cornbread with coconut and lime" data-country="mozambique" data-page="p.179">
@@ -664,7 +661,7 @@
           <div class="recipe-desc">Cornbread with coconut and lime</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.179</span>
-            <a href="https://drive.google.com/file/d/1g33V70CTMkEU-6O5rPG95Wvbgo6PuNck/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/mozambique.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="bolo polana" data-desc="cashew and potato cake" data-country="mozambique" data-page="p.189">
@@ -672,7 +669,7 @@
           <div class="recipe-desc">Cashew and potato cake</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.189</span>
-            <a href="https://drive.google.com/file/d/1g33V70CTMkEU-6O5rPG95Wvbgo6PuNck/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/mozambique.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
       </div>
@@ -682,7 +679,7 @@
     <div class="country-section" data-country="South Africa">
       <div class="country-header">
         <h3 class="country-title">South Africa</h3>
-        <a href="https://drive.google.com/file/d/1ceVYWwDOuDBAWr7C6uHJdUFyqRsfKZLM/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all South Africa recipes (PDF)</a>
+        <a href="pdfs/south-africa.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all South Africa recipes (PDF)</a>
       </div>
       <div class="recipe-grid">
         <div class="recipe-card" data-name="chakalaka" data-desc="spicy vegetable relish" data-country="south africa" data-page="p.207">
@@ -690,7 +687,7 @@
           <div class="recipe-desc">Spicy vegetable relish</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.207</span>
-            <a href="https://drive.google.com/file/d/1ceVYWwDOuDBAWr7C6uHJdUFyqRsfKZLM/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/south-africa.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="melva pudding cake" data-desc="melva pudding cake" data-country="south africa" data-page="p.213">
@@ -698,7 +695,7 @@
           <div class="recipe-desc">Melva pudding cake</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.213</span>
-            <a href="https://drive.google.com/file/d/1ceVYWwDOuDBAWr7C6uHJdUFyqRsfKZLM/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/south-africa.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
       </div>
@@ -708,7 +705,7 @@
     <div class="country-section" data-country="Tanzania">
       <div class="country-header">
         <h3 class="country-title">Tanzania</h3>
-        <a href="https://drive.google.com/file/d/1E_nR9N2UW4h46_VRYNpkH7HmVesh-r6F/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Tanzania recipes (PDF)</a>
+        <a href="pdfs/tanzania.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Tanzania recipes (PDF)</a>
       </div>
       <div class="recipe-grid">
         <div class="recipe-card" data-name="ma shara's quick stewed eggplant with coconut" data-desc="quick stewed eggplant with coconut" data-country="tanzania" data-page="p.152">
@@ -716,7 +713,7 @@
           <div class="recipe-desc">Quick stewed eggplant with coconut</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.152</span>
-            <a href="https://drive.google.com/file/d/1E_nR9N2UW4h46_VRYNpkH7HmVesh-r6F/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/tanzania.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="date bread" data-desc="date bread" data-country="tanzania" data-page="p.158">
@@ -724,7 +721,7 @@
           <div class="recipe-desc">Date bread</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.158</span>
-            <a href="https://drive.google.com/file/d/1E_nR9N2UW4h46_VRYNpkH7HmVesh-r6F/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/tanzania.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
       </div>
@@ -734,7 +731,7 @@
     <div class="country-section" data-country="Madagascar">
       <div class="country-header">
         <h3 class="country-title">Madagascar</h3>
-        <a href="https://drive.google.com/file/d/1GOB32U1CSSPSzFiVUGV-0Ty3cJbIyyFp/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Madagascar recipes (PDF)</a>
+        <a href="pdfs/madagascar.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Madagascar recipes (PDF)</a>
       </div>
       <div class="recipe-grid">
         <div class="recipe-card" data-name="mofo gasy" data-desc="yeasted rice and coconut pancakes" data-country="madagascar" data-page="p.231">
@@ -742,7 +739,7 @@
           <div class="recipe-desc">Yeasted rice and coconut pancakes</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.231</span>
-            <a href="https://drive.google.com/file/d/1GOB32U1CSSPSzFiVUGV-0Ty3cJbIyyFp/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/madagascar.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
         <div class="recipe-card" data-name="ginger spritz" data-desc="ginger spritz" data-country="madagascar" data-page="p.245">
@@ -750,7 +747,7 @@
           <div class="recipe-desc">Ginger spritz</div>
           <div class="recipe-meta">
             <span class="recipe-page">p.245</span>
-            <a href="https://drive.google.com/file/d/1GOB32U1CSSPSzFiVUGV-0Ty3cJbIyyFp/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+            <a href="pdfs/madagascar.pdf" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
           </div>
         </div>
       </div>
