@@ -9,10 +9,6 @@
       box-sizing: border-box;
     }
     
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       padding: 0;
@@ -200,15 +196,6 @@
       height: 500px;
       border: 0;
       border-radius: 4px;
-    }
-    
-    .warning-box {
-      background: #fff3cd;
-      border: 2px solid #ffc107;
-      border-radius: 8px;
-      padding: 16px;
-      margin: 16px 0;
-      color: #856404;
     }
     
     .filters {
@@ -402,6 +389,7 @@
 
 <div class="container">
 
+  <!-- HERO -->
   <section class="hero">
     <h1>Cookbook Potluck Night</h1>
     <p class="hero-subtitle">Recipes from <em>In Bibi's Kitchen</em></p>
@@ -418,13 +406,14 @@
     
     <p><strong>Choose one dish</strong> (or two if you're excited!). <strong>Please pick your dish by February 12.</strong></p>
     
-    <img id="housePhoto" src="" alt="Vicki's house" class="house-photo">
+    <img src="https://drive.google.com/thumbnail?id=1l_RO5vEmwRy-nty_Uks41p-6KeDLalDF&sz=w1600" alt="Vicki's house" class="house-photo">
     
     <p style="margin-top: 20px;">
-      <a id="heroCTA" href="#" target="_blank" rel="noopener" class="btn">Claim Your Dish</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdn61fGaQm3KBvttN6IY-otYrr5W7igkgax85wZYa4ZdxnI5Q/viewform?usp=header" target="_blank" rel="noopener" class="btn">Claim Your Dish</a>
     </p>
   </section>
 
+  <!-- HOW THIS WORKS -->
   <section>
     <h2>How This Works</h2>
     <div class="steps">
@@ -447,6 +436,7 @@
     </div>
   </section>
 
+  <!-- NOTES -->
   <section>
     <h2>Notes &amp; What to Bring</h2>
     <ul class="notes-list">
@@ -458,36 +448,297 @@
     </ul>
   </section>
 
+  <!-- WHAT'S ALREADY CLAIMED -->
   <section>
     <h2>What's Already Claimed</h2>
     <p>This list updates automatically as people submit the form. Please check it before claiming.</p>
     <div class="sheet-container">
-      <div id="sheetWarning" class="warning-box hidden">
-        <strong>Host action needed:</strong> Replace <code>STATUS_SHEET_PUBLISHED_URL</code> in the config at the top of this file with your published Google Sheet URL.
-      </div>
-      <iframe id="statusSheet" src="" title="Claimed dishes list"></iframe>
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLkKO1Cxuqudj1qMrtgp0A0UKfkP06UzTblCc6zx3ejb4C0azMJIOToHWnIG-wU79I0Xddam_2J_yh/pubhtml?gid=1096872766&single=true" title="Claimed dishes list"></iframe>
     </div>
   </section>
 
+  <!-- BROWSE RECIPES -->
   <section>
     <h2>Browse Recipes</h2>
     <div class="filters">
       <input type="text" id="searchBox" class="search-box" placeholder="Search recipes..." aria-label="Search recipes">
-      <div class="filter-chips" id="filterChips" role="group" aria-label="Filter by country"></div>
+      <div class="filter-chips" id="filterChips">
+        <button class="chip active" data-country="all">All</button>
+        <button class="chip" data-country="Eritrea">Eritrea</button>
+        <button class="chip" data-country="Somalia">Somalia</button>
+        <button class="chip" data-country="Kenya">Kenya</button>
+        <button class="chip" data-country="Comoros">Comoros</button>
+        <button class="chip" data-country="Mozambique">Mozambique</button>
+        <button class="chip" data-country="South Africa">South Africa</button>
+        <button class="chip" data-country="Tanzania">Tanzania</button>
+        <button class="chip" data-country="Madagascar">Madagascar</button>
+      </div>
       <button class="clear-filters" id="clearFilters">Clear filters</button>
       <p class="hint-text">Tip: Check "What's Already Claimed" above before you submit.</p>
     </div>
   </section>
 
-  <section id="recipeList"></section>
+  <!-- RECIPE LIST -->
+  <section id="recipeList">
+
+    <!-- ERITREA -->
+    <div class="country-section" data-country="Eritrea">
+      <div class="country-header">
+        <h3 class="country-title">Eritrea</h3>
+        <a href="https://drive.google.com/file/d/1clCkWFXB1dBm0TlcnDnzLVd5c0YoRPZv/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Eritrea recipes (PDF)</a>
+      </div>
+      <div class="recipe-grid">
+        <div class="recipe-card" data-name="doro wat" data-desc="stewed chicken legs with berbere and eggs" data-country="eritrea" data-page="p.53">
+          <div class="recipe-name">Doro Wat</div>
+          <div class="recipe-desc">Stewed chicken legs with berbere and eggs</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.53</span>
+            <a href="https://drive.google.com/file/d/1clCkWFXB1dBm0TlcnDnzLVd5c0YoRPZv/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="ma gehennet's zebhi hamli" data-desc="stewed spinach" data-country="eritrea" data-page="p.44">
+          <div class="recipe-name">Ma Gehennet's Zebhi Hamli</div>
+          <div class="recipe-desc">Stewed spinach</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.44</span>
+            <a href="https://drive.google.com/file/d/1clCkWFXB1dBm0TlcnDnzLVd5c0YoRPZv/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOMALIA -->
+    <div class="country-section" data-country="Somalia">
+      <div class="country-header">
+        <h3 class="country-title">Somalia</h3>
+        <a href="https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Somalia recipes (PDF)</a>
+      </div>
+      <div class="recipe-grid">
+        <div class="recipe-card" data-name="digaag qumbe" data-desc="chicken stew with yogurt and coconut" data-country="somalia" data-page="p.73">
+          <div class="recipe-name">Digaag Qumbe</div>
+          <div class="recipe-desc">Chicken stew with yogurt and coconut</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.73</span>
+            <a href="https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="ma sahra's spiced chicken and onion samosas" data-desc="spiced chicken and onion samosas" data-country="somalia" data-page="p.88">
+          <div class="recipe-name">Ma Sahra's Spiced Chicken and Onion Samosas</div>
+          <div class="recipe-desc">Spiced chicken and onion samosas</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.88</span>
+            <a href="https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="ma halima's sabaayad" data-desc="somali flatbreads" data-country="somalia" data-page="p.76">
+          <div class="recipe-name">Ma Halima's Sabaayad</div>
+          <div class="recipe-desc">Somali flatbreads</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.76</span>
+            <a href="https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="shaah cadays" data-desc="somali spiced tea with milk" data-country="somalia" data-page="p.94">
+          <div class="recipe-name">Shaah Cadays</div>
+          <div class="recipe-desc">Somali spiced tea with milk</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.94</span>
+            <a href="https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KENYA -->
+    <div class="country-section" data-country="Kenya">
+      <div class="country-header">
+        <h3 class="country-title">Kenya</h3>
+        <a href="https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Kenya recipes (PDF)</a>
+      </div>
+      <div class="recipe-grid">
+        <div class="recipe-card" data-name="ma kauthar's chicken biryani" data-desc="chicken biryani" data-country="kenya" data-page="p.122">
+          <div class="recipe-name">Ma Kauthar's Chicken Biryani</div>
+          <div class="recipe-desc">Chicken biryani</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.122</span>
+            <a href="https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="kachumbari" data-desc="tomato and onion salad" data-country="kenya" data-page="p.114">
+          <div class="recipe-name">Kachumbari</div>
+          <div class="recipe-desc">Tomato and onion salad</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.114</span>
+            <a href="https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="sukuma wiki" data-desc="greens with tomatoes" data-country="kenya" data-page="p.121">
+          <div class="recipe-name">Sukuma Wiki</div>
+          <div class="recipe-desc">Greens with tomatoes</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.121</span>
+            <a href="https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="ma penny's mukimo" data-desc="mashed green split peas, corn, and potatoes" data-country="kenya" data-page="p.118">
+          <div class="recipe-name">Ma Penny's Mukimo</div>
+          <div class="recipe-desc">Mashed green split peas, corn, and potatoes</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.118</span>
+            <a href="https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMOROS -->
+    <div class="country-section" data-country="Comoros">
+      <div class="country-header">
+        <h3 class="country-title">Comoros</h3>
+        <a href="https://drive.google.com/file/d/1Io6092wt9NUDAn3Bct4MuUTmAxAIz6v0/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Comoros recipes (PDF)</a>
+      </div>
+      <div class="recipe-grid">
+        <div class="recipe-card" data-name="sweet pea soup with coconut and ginger" data-desc="sweet pea soup with coconut and ginger" data-country="comoros" data-page="p.260">
+          <div class="recipe-name">Sweet Pea Soup with Coconut and Ginger</div>
+          <div class="recipe-desc">Sweet pea soup with coconut and ginger</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.260</span>
+            <a href="https://drive.google.com/file/d/1Io6092wt9NUDAn3Bct4MuUTmAxAIz6v0/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="ambrevades au curry" data-desc="curried pigeon peas" data-country="comoros" data-page="p.263">
+          <div class="recipe-name">Ambrevades au Curry</div>
+          <div class="recipe-desc">Curried pigeon peas</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.263</span>
+            <a href="https://drive.google.com/file/d/1Io6092wt9NUDAn3Bct4MuUTmAxAIz6v0/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOZAMBIQUE -->
+    <div class="country-section" data-country="Mozambique">
+      <div class="country-header">
+        <h3 class="country-title">Mozambique</h3>
+        <a href="https://drive.google.com/file/d/1g33V70CTMkEU-6O5rPG95Wvbgo6PuNck/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Mozambique recipes (PDF)</a>
+      </div>
+      <div class="recipe-grid">
+        <div class="recipe-card" data-name="ma josefina's plantains with coconut and prawns" data-desc="plantains with coconut and prawns" data-country="mozambique" data-page="p.188">
+          <div class="recipe-name">Ma Josefina's Plantains with Coconut and Prawns</div>
+          <div class="recipe-desc">Plantains with coconut and prawns</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.188</span>
+            <a href="https://drive.google.com/file/d/1g33V70CTMkEU-6O5rPG95Wvbgo6PuNck/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="ma maria's corn de pão com coco" data-desc="cornbread with coconut and lime" data-country="mozambique" data-page="p.179">
+          <div class="recipe-name">Ma Maria's Corn de Pão com Coco</div>
+          <div class="recipe-desc">Cornbread with coconut and lime</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.179</span>
+            <a href="https://drive.google.com/file/d/1g33V70CTMkEU-6O5rPG95Wvbgo6PuNck/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="bolo polana" data-desc="cashew and potato cake" data-country="mozambique" data-page="p.189">
+          <div class="recipe-name">Bolo Polana</div>
+          <div class="recipe-desc">Cashew and potato cake</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.189</span>
+            <a href="https://drive.google.com/file/d/1g33V70CTMkEU-6O5rPG95Wvbgo6PuNck/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOUTH AFRICA -->
+    <div class="country-section" data-country="South Africa">
+      <div class="country-header">
+        <h3 class="country-title">South Africa</h3>
+        <a href="https://drive.google.com/file/d/1ceVYWwDOuDBAWr7C6uHJdUFyqRsfKZLM/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all South Africa recipes (PDF)</a>
+      </div>
+      <div class="recipe-grid">
+        <div class="recipe-card" data-name="chakalaka" data-desc="spicy vegetable relish" data-country="south africa" data-page="p.207">
+          <div class="recipe-name">Chakalaka</div>
+          <div class="recipe-desc">Spicy vegetable relish</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.207</span>
+            <a href="https://drive.google.com/file/d/1ceVYWwDOuDBAWr7C6uHJdUFyqRsfKZLM/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="melva pudding cake" data-desc="melva pudding cake" data-country="south africa" data-page="p.213">
+          <div class="recipe-name">Melva Pudding Cake</div>
+          <div class="recipe-desc">Melva pudding cake</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.213</span>
+            <a href="https://drive.google.com/file/d/1ceVYWwDOuDBAWr7C6uHJdUFyqRsfKZLM/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TANZANIA -->
+    <div class="country-section" data-country="Tanzania">
+      <div class="country-header">
+        <h3 class="country-title">Tanzania</h3>
+        <a href="https://drive.google.com/file/d/1E_nR9N2UW4h46_VRYNpkH7HmVesh-r6F/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Tanzania recipes (PDF)</a>
+      </div>
+      <div class="recipe-grid">
+        <div class="recipe-card" data-name="ma shara's quick stewed eggplant with coconut" data-desc="quick stewed eggplant with coconut" data-country="tanzania" data-page="p.152">
+          <div class="recipe-name">Ma Shara's Quick Stewed Eggplant with Coconut</div>
+          <div class="recipe-desc">Quick stewed eggplant with coconut</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.152</span>
+            <a href="https://drive.google.com/file/d/1E_nR9N2UW4h46_VRYNpkH7HmVesh-r6F/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="date bread" data-desc="date bread" data-country="tanzania" data-page="p.158">
+          <div class="recipe-name">Date Bread</div>
+          <div class="recipe-desc">Date bread</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.158</span>
+            <a href="https://drive.google.com/file/d/1E_nR9N2UW4h46_VRYNpkH7HmVesh-r6F/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MADAGASCAR -->
+    <div class="country-section" data-country="Madagascar">
+      <div class="country-header">
+        <h3 class="country-title">Madagascar</h3>
+        <a href="https://drive.google.com/file/d/1GOB32U1CSSPSzFiVUGV-0Ty3cJbIyyFp/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all Madagascar recipes (PDF)</a>
+      </div>
+      <div class="recipe-grid">
+        <div class="recipe-card" data-name="mofo gasy" data-desc="yeasted rice and coconut pancakes" data-country="madagascar" data-page="p.231">
+          <div class="recipe-name">Mofo Gasy</div>
+          <div class="recipe-desc">Yeasted rice and coconut pancakes</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.231</span>
+            <a href="https://drive.google.com/file/d/1GOB32U1CSSPSzFiVUGV-0Ty3cJbIyyFp/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+        <div class="recipe-card" data-name="ginger spritz" data-desc="ginger spritz" data-country="madagascar" data-page="p.245">
+          <div class="recipe-name">Ginger Spritz</div>
+          <div class="recipe-desc">Ginger spritz</div>
+          <div class="recipe-meta">
+            <span class="recipe-page">p.245</span>
+            <a href="https://drive.google.com/file/d/1GOB32U1CSSPSzFiVUGV-0Ty3cJbIyyFp/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
   <div id="noResults" class="no-results hidden">
     <p>No recipes match your search.</p>
   </div>
 
+  <!-- FOOTER -->
   <section class="footer-cta">
     <h2 style="border: none; margin-top: 0;">Ready to claim your dish?</h2>
-    <p><a id="footerCTA" href="#" target="_blank" rel="noopener" class="btn">Claim Your Dish</a></p>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdn61fGaQm3KBvttN6IY-otYrr5W7igkgax85wZYa4ZdxnI5Q/viewform?usp=header" target="_blank" rel="noopener" class="btn">Claim Your Dish</a></p>
     <p style="margin-top: 16px;">If you have questions, just text me.</p>
     <p><strong>Please pick your dish by February 12.</strong></p>
   </section>
@@ -495,151 +746,92 @@
 </div>
 
 <script>
-// ==========================================================================
-// EDIT HERE: Update these URLs as needed
-// ==========================================================================
-const CONFIG = {
-  GOOGLE_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSdn61fGaQm3KBvttN6IY-otYrr5W7igkgax85wZYa4ZdxnI5Q/viewform?usp=header",
-  HOUSE_PHOTO_URL: "https://drive.google.com/thumbnail?id=1l_RO5vEmwRy-nty_Uks41p-6KeDLalDF&sz=w1600",
-  STATUS_SHEET_PUBLISHED_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQLkKO1Cxuqudj1qMrtgp0A0UKfkP06UzTblCc6zx3ejb4C0azMJIOToHWnIG-wU79I0Xddam_2J_yh/pubhtml?gid=1096872766&single=true",
-  COUNTRY_PDF_LINKS: {
-    "Eritrea": "https://drive.google.com/file/d/1clCkWFXB1dBm0TlcnDnzLVd5c0YoRPZv/view?usp=drive_link",
-    "Somalia": "https://drive.google.com/file/d/17BGVkhExZelN2pTKIkdqNAgE4Kh8FUYt/view?usp=drive_link",
-    "Kenya": "https://drive.google.com/file/d/1rTtH-aFaVOZcIGEt_GlZG90sCN9znI67/view?usp=drive_link",
-    "Comoros": "https://drive.google.com/file/d/1Io6092wt9NUDAn3Bct4MuUTmAxAIz6v0/view?usp=drive_link",
-    "Mozambique": "https://drive.google.com/file/d/1g33V70CTMkEU-6O5rPG95Wvbgo6PuNck/view?usp=drive_link",
-    "South Africa": "https://drive.google.com/file/d/1ceVYWwDOuDBAWr7C6uHJdUFyqRsfKZLM/view?usp=drive_link",
-    "Tanzania": "https://drive.google.com/file/d/1E_nR9N2UW4h46_VRYNpkH7HmVesh-r6F/view?usp=drive_link",
-    "Madagascar": "https://drive.google.com/file/d/1GOB32U1CSSPSzFiVUGV-0Ty3cJbIyyFp/view?usp=drive_link"
-  }
-};
-// ==========================================================================
-
-const RECIPES = [
-  { country: "Eritrea", name: "Doro Wat", desc: "Stewed chicken legs with berbere and eggs", page: "p.53" },
-  { country: "Eritrea", name: "Ma Gehennet's Zebhi Hamli", desc: "Stewed spinach", page: "p.44" },
-  { country: "Somalia", name: "Digaag Qumbe", desc: "Chicken stew with yogurt and coconut", page: "p.73" },
-  { country: "Somalia", name: "Ma Sahra's Spiced Chicken and Onion Samosas", desc: "Spiced chicken and onion samosas", page: "p.88" },
-  { country: "Somalia", name: "Ma Halima's Sabaayad", desc: "Somali flatbreads", page: "p.76" },
-  { country: "Somalia", name: "Shaah Cadays", desc: "Somali spiced tea with milk", page: "p.94" },
-  { country: "Kenya", name: "Ma Kauthar's Chicken Biryani", desc: "Chicken biryani", page: "p.122" },
-  { country: "Kenya", name: "Kachumbari", desc: "Tomato and onion salad", page: "p.114" },
-  { country: "Kenya", name: "Sukuma Wiki", desc: "Greens with tomatoes", page: "p.121" },
-  { country: "Kenya", name: "Ma Penny's Mukimo", desc: "Mashed green split peas, corn, and potatoes", page: "p.118" },
-  { country: "Comoros", name: "Sweet Pea Soup with Coconut and Ginger", desc: "Sweet pea soup with coconut and ginger", page: "p.260" },
-  { country: "Comoros", name: "Ambrevades au Curry", desc: "Curried pigeon peas", page: "p.263" },
-  { country: "Mozambique", name: "Ma Josefina's Plantains with Coconut and Prawns", desc: "Plantains with coconut and prawns", page: "p.188" },
-  { country: "Mozambique", name: "Ma Maria's Corn de Pão com Coco", desc: "Cornbread with coconut and lime", page: "p.179" },
-  { country: "Mozambique", name: "Bolo Polana", desc: "Cashew and potato cake", page: "p.189" },
-  { country: "South Africa", name: "Chakalaka", desc: "Spicy vegetable relish", page: "p.207" },
-  { country: "South Africa", name: "Melva Pudding Cake", desc: "Melva pudding cake", page: "p.213" },
-  { country: "Tanzania", name: "Ma Shara's Quick Stewed Eggplant with Coconut", desc: "Quick stewed eggplant with coconut", page: "p.152" },
-  { country: "Tanzania", name: "Date Bread", desc: "Date bread", page: "p.158" },
-  { country: "Madagascar", name: "Mofo Gasy", desc: "Yeasted rice and coconut pancakes", page: "p.231" },
-  { country: "Madagascar", name: "Ginger Spritz", desc: "Ginger spritz", page: "p.245" }
-];
-
-const COUNTRIES = ["Eritrea", "Somalia", "Kenya", "Comoros", "Mozambique", "South Africa", "Tanzania", "Madagascar"];
-
 document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("heroCTA").href = CONFIG.GOOGLE_FORM_URL;
-  document.getElementById("footerCTA").href = CONFIG.GOOGLE_FORM_URL;
-  document.getElementById("housePhoto").src = CONFIG.HOUSE_PHOTO_URL;
-  
-  const sheetUrl = CONFIG.STATUS_SHEET_PUBLISHED_URL;
-  if (sheetUrl.includes("REPLACE_WITH")) {
-    document.getElementById("sheetWarning").classList.remove("hidden");
-    document.getElementById("statusSheet").classList.add("hidden");
-  } else {
-    document.getElementById("statusSheet").src = sheetUrl;
-  }
-  
-  const chipsContainer = document.getElementById("filterChips");
-  const allChip = document.createElement("button");
-  allChip.className = "chip active";
-  allChip.textContent = "All";
-  allChip.dataset.country = "all";
-  chipsContainer.appendChild(allChip);
-  
-  COUNTRIES.forEach(function(country) {
-    const chip = document.createElement("button");
-    chip.className = "chip";
-    chip.textContent = country;
-    chip.dataset.country = country;
-    chipsContainer.appendChild(chip);
-  });
-  
-  renderRecipes();
-  
-  document.getElementById("searchBox").addEventListener("input", filterRecipes);
-  
-  chipsContainer.addEventListener("click", function(e) {
+  var searchBox = document.getElementById("searchBox");
+  var filterChips = document.getElementById("filterChips");
+  var clearFilters = document.getElementById("clearFilters");
+
+  searchBox.addEventListener("input", filterRecipes);
+
+  filterChips.addEventListener("click", function(e) {
     if (e.target.classList.contains("chip")) {
-      document.querySelectorAll(".chip").forEach(function(c) {
-        c.classList.remove("active");
-      });
+      var chips = document.querySelectorAll(".chip");
+      for (var i = 0; i < chips.length; i++) {
+        chips[i].classList.remove("active");
+      }
       e.target.classList.add("active");
       filterRecipes();
     }
   });
-  
-  document.getElementById("clearFilters").addEventListener("click", function() {
-    document.getElementById("searchBox").value = "";
-    document.querySelectorAll(".chip").forEach(function(c) {
-      c.classList.remove("active");
-    });
+
+  clearFilters.addEventListener("click", function() {
+    searchBox.value = "";
+    var chips = document.querySelectorAll(".chip");
+    for (var i = 0; i < chips.length; i++) {
+      chips[i].classList.remove("active");
+    }
     document.querySelector('.chip[data-country="all"]').classList.add("active");
     filterRecipes();
   });
+
+  function filterRecipes() {
+    var searchTerm = searchBox.value.toLowerCase().trim();
+    var activeChip = document.querySelector(".chip.active");
+    var selectedCountry = activeChip ? activeChip.getAttribute("data-country") : "all";
+    var anyVisible = false;
+
+    var sections = document.querySelectorAll(".country-section");
+    for (var i = 0; i < sections.length; i++) {
+      var section = sections[i];
+      var sectionCountry = section.getAttribute("data-country");
+      var countryMatch = selectedCountry === "all" || sectionCountry === selectedCountry;
+
+      if (!countryMatch) {
+        section.classList.add("hidden");
+        continue;
+      }
+
+      var sectionHasVisible = false;
+      var cards = section.querySelectorAll(".recipe-card");
+
+      for (var j = 0; j < cards.length; j++) {
+        var card = cards[j];
+        var name = card.getAttribute("data-name");
+        var desc = card.getAttribute("data-desc");
+        var country = card.getAttribute("data-country");
+        var page = card.getAttribute("data-page");
+
+        var searchMatch = !searchTerm ||
+          name.indexOf(searchTerm) !== -1 ||
+          desc.indexOf(searchTerm) !== -1 ||
+          country.indexOf(searchTerm) !== -1 ||
+          page.indexOf(searchTerm) !== -1;
+
+        if (searchMatch) {
+          card.classList.remove("hidden");
+          sectionHasVisible = true;
+          anyVisible = true;
+        } else {
+          card.classList.add("hidden");
+        }
+      }
+
+      if (sectionHasVisible) {
+        section.classList.remove("hidden");
+      } else {
+        section.classList.add("hidden");
+      }
+    }
+
+    var noResults = document.getElementById("noResults");
+    if (anyVisible) {
+      noResults.classList.add("hidden");
+    } else {
+      noResults.classList.remove("hidden");
+    }
+  }
 });
+</script>
 
-function renderRecipes() {
-  const container = document.getElementById("recipeList");
-  container.innerHTML = "";
-  
-  COUNTRIES.forEach(function(country) {
-    const countryRecipes = RECIPES.filter(function(r) {
-      return r.country === country;
-    });
-    if (countryRecipes.length === 0) return;
-    
-    const section = document.createElement("div");
-    section.className = "country-section";
-    section.dataset.country = country;
-    
-    const pdfLink = CONFIG.COUNTRY_PDF_LINKS[country] || "#";
-    
-    let cardsHtml = "";
-    countryRecipes.forEach(function(recipe) {
-      cardsHtml += '<div class="recipe-card" data-name="' + recipe.name.toLowerCase() + '" data-desc="' + recipe.desc.toLowerCase() + '" data-country="' + recipe.country.toLowerCase() + '" data-page="' + recipe.page.toLowerCase() + '">' +
-        '<div class="recipe-name">' + recipe.name + '</div>' +
-        '<div class="recipe-desc">' + recipe.desc + '</div>' +
-        '<div class="recipe-meta">' +
-          '<span class="recipe-page">' + recipe.page + '</span>' +
-          '<a href="' + pdfLink + '" target="_blank" rel="noopener" class="btn btn-small view-pdf-btn">View PDF</a>' +
-        '</div>' +
-      '</div>';
-    });
-    
-    section.innerHTML = '<div class="country-header">' +
-      '<h3 class="country-title">' + country + '</h3>' +
-      '<a href="' + pdfLink + '" target="_blank" rel="noopener" class="btn btn-secondary btn-small">View all ' + country + ' recipes (PDF)</a>' +
-    '</div>' +
-    '<div class="recipe-grid">' + cardsHtml + '</div>';
-    
-    container.appendChild(section);
-  });
-}
-
-function filterRecipes() {
-  const searchTerm = document.getElementById("searchBox").value.toLowerCase().trim();
-  const activeChip = document.querySelector(".chip.active");
-  const selectedCountry = activeChip ? activeChip.dataset.country : "all";
-  
-  let anyVisible = false;
-  
-  document.querySelectorAll(".country-section").forEach(function(section) {
-    const sectionCountry = section.dataset.country;
-    const countryMatch = selectedCountry === "all" || sectionCountry === selectedCountry;
-    
-    if (!countryM
+</body>
+</html>
